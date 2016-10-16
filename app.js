@@ -25,5 +25,22 @@
             }
         };
         $scope.message = "";
+        $scope.changeTextColor = function () {
+            if ($scope.message === "Enjoy!" || $scope.message === "Too much!") {
+                return { "color": "green" };
+            } else if ($scope.message === "Please enter data first") {
+                return { "color": "red" };
+            }
+        };
+
+        $scope.changeBorderColor = function () {
+            if ($scope.message === "Enjoy!" || $scope.message === "Too much!") {
+                return { "border-color": "green" };
+            } else if ($scope.message === "Please enter data first") {
+                return { "border-color": "red" };
+            } else {
+                return { "border-style": "none" };
+            }
+        };
     }
 })();

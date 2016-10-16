@@ -12,6 +12,17 @@
 			font-size: 1.3em;
 			font-weight: bold;
 		}
+
+		.textbox {
+			border: 2px;
+			border-radius: 6px;
+			border-style: solid;
+		}
+
+		.note {
+			color: red;
+			font-size: 1em;
+		}
 	</style>
 </head>
 
@@ -19,15 +30,16 @@
 	<div class="container" ng-controller="LunchCheckController">
 		<h1>Lunch Checker</h1>
 
-		<div class="form-group">
+		<div class="form-group textbox" ng-style="changeBorderColor()">
 			<!-- An empty item, i.e., , , is not considered and counted towards the total item count. -->
 			<input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control"
 				ng-model="itemList">
 		</div>
+		<div class="note">Note that an 'empty' item is not counted towards the total count of items in the list.</div>
 		<div class="form-group">
 			<button class="btn btn-default" ng-click="showMessage()">Check If Too Much</button>
 		</div>
-		<div class="form-group message">
+		<div class="form-group message" ng-style="changeTextColor()">
 			{{message}}
 		</div>
 	</div>
